@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins";
+}
+
+/* Intro */
+.portfolio-intro {
+    max-width: 350px;
+    margin: 0 auto;
+    padding-top: 45px;
+
+    text-align: center;
+}
+
+.portfolio-title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.portfolio-description {
+    margin: 0;
+
+    font-size: 24px;
+}
+
+/* Parte de los proyectos */
+.my-projects {
+    max-width: 404px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.my-projects-results {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.project-item {
+    border: solid 2px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 404px;
+    max-height: 255px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.project-name {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.project-description {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+.project-link {
+    align-self: flex-end;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #51aff3;
+}
