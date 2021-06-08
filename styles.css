@@ -16,6 +16,12 @@ body {
     text-align: center;
 }
 
+@media (min-width: 960px) {
+    .portfolio-intro {
+        max-width: none;
+    }
+}
+
 .portfolio-title {
     margin: 0;
     margin-bottom: 10px;
@@ -34,8 +40,13 @@ body {
 .my-projects {
     max-width: 404px;
     margin: 0 auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 20px 100px 20px;
+}
+
+@media (min-width: 960px) {
+    .my-projects {
+        max-width: none;
+    }
 }
 
 .my-projects-results {
@@ -44,20 +55,32 @@ body {
     gap: 45px;
 }
 
+@media (min-width: 960px) {
+    .my-projects-results {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 .project-item {
+    display: flex;
+    flex-direction: column;
+
     border: solid 2px;
     border-radius: 4px;
-    overflow: hidden;
 }
 
 .project-img {
-    width: 404px;
-    max-height: 255px;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+    height: 255px;
 }
 
 .project-info {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     padding: 20px;
 }
 

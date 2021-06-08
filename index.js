@@ -1,7 +1,7 @@
 // Función encargada de manipular los elementos del DOM y mostrar los proyectos
 function mostrarProyecto(nombre, descripcion, link, imagen) {
     // Primero, obtengo el template y el contenedor padre
-    const templateEl = document.querySelector(".project-item-template");
+    const templateEl = document.querySelector("#project-item-template");
     const contenedorEl = document.querySelector(".my-projects-results");
 
     // Empiezo a modificar los elementos del template: Agrego la imagen
