@@ -31,18 +31,31 @@ function mostrarProyecto(nombre, descripcion, link, imagen) {
 function procesarData(JSONdata) {
     // Obtengo el array con todos los items del JSON
     const arrayItems = JSONdata["items"];
-    const arrayImagenes = JSONdata["includes"]["Asset"].reverse();
+    const arrayImagenes = JSONdata["includes"]["Asset"];
 
-    arrayItems.forEach((item, index) => {
+    arrayItems.forEach((item) => {
         // Obtengo toda la información de cada item
         let nombre = item["fields"]["nombre"];
         let descripcion = item["fields"]["descripcion"];
         let link = item["fields"]["url"];
-        let imagen = arrayImagenes[index]["fields"]["file"]["url"];
+        let idProyecto = item["fields"]["imagen"]["sys"]["id"];
+
+        // Obtengo el link de la imagen
+        let imagen = obtenerLinkImagen(idProyecto, arrayImagenes);
 
         // Creo los elementos y los muestro en pantalla
         mostrarProyecto(nombre, descripcion, link, imagen);
     });
+}
+
+// Función para obtener el link de la imagen
+function obtenerLinkImagen(idProyecto, arrayImagenes) {
+    // Busco el ID de las imágenes que coincida con el ID del proyecto
+    const resultado = arrayImagenes.find(
+        (item) => item["sys"]["id"] == idProyecto
+    );
+
+    return resultado["fields"]["file"]["url"];
 }
 
 // Función principal
